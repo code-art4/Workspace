@@ -29,7 +29,7 @@ const NavItem = ({
           <span className='font-medium'>{nav}</span>
         </div>
         {more ? (
-          <div className='ml-3'>
+          <div className='ml-1'>
             <Image
               src='/svgs/caret-down.svg'
               alt='more'

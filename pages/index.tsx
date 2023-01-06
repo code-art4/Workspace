@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Nav } from './components/Home';
+import { Nav, Workspace } from './components/Home';
 
 export default function Home() {
   return (
@@ -8,7 +8,10 @@ export default function Home() {
         <title>Dummy App</title>
       </Head>
       <main>
-        <Nav />
+        <div className='flex'>
+          <Nav />
+          <Workspace />
+        </div>
       </main>
     </>
   );

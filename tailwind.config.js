@@ -14,7 +14,8 @@ module.exports = {
       colors: {
         gray: '#868585',
         lightgray: '#F8F8F8',
-        daygray: '#ECEEF0'
+        daygray: '#ECEEF0',
+        balablue: '#1F71AB'
       }
     },
   },

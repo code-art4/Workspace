@@ -9,3 +9,7 @@
     font-family: 'Inter', sans-serif;
     color: #46494a;
 }
+
+body {
+    overflow-x: hidden;
+}

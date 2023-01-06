@@ -13,7 +13,7 @@ const Nav = () => {
     }
   };
   return (
-    <div className='w-[22%] border-r border-r-daygray py-10 h-screen px-12 flex flex-col'>
+    <div className='w-[22%] border-r border-r-daygray py-10 h-screen px-8 flex flex-col'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
           <Image
