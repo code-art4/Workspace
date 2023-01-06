@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Nav, Workspace } from './components/Home';
+import { Nav, Workspace } from '../components/Home';
 
 export default function Home() {
   return (
