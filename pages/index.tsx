@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Dummy App</title>
       </Head>
-      <main>
+      <main className='max-w-[1600px] mx-auto'>
         <div className='flex'>
           <Nav />
           <Workspace />

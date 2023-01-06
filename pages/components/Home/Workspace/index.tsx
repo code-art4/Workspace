@@ -39,7 +39,7 @@ const Workspace = () => {
           />
         </div>
       </div>
-      <div className='mt-auto px-6 grid grid-cols-3 gap-x-3 w-full'>
+      <div className='mt-auto px-6 lg:flex lg:flex-col w-full xl:grid xl:grid-cols-2 2xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full'>
         {CardItems.map((item) => {
           return <Card key={item.title} {...item} />;
         })}
