@@ -3,33 +3,47 @@ import CardItems from './CardItems';
 import TopNav from './TopNav';
 import Button from '../../shared/Button';
 
-const Workspace = () => {
+const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
+  const workspaces = [
+    {
+      number: 0,
+      name: 'Drafts',
+    },
+    {
+      number: 0,
+      name: 'Waiting for me',
+    },
+    {
+      number: 0,
+      name: 'Waiting for others',
+    },
+    {
+      number: 0,
+      name: 'Completed',
+    },
+  ];
   return (
     <div className='w-full flex flex-col min-h-screen'>
       <TopNav />
-      <div className='mx-6 my-4 border border-daygray rounded-lg h-[72vh]'>
+      <div className='mx-6 mt-4 mb-6 border border-daygray rounded-lg h-[70vh] 2xl:h-[80vh] flex flex-col'>
         <div className='flex items-center w-full'>
-          <div className='w-full py-6 px-6'>
-            <h5 className='text-2xl font-medium'>0</h5>
-            <p className='text-sm'>Drafts</p>
-          </div>
-
-          <div className='w-full py-6 px-6 border border-daygray bg-lightgray'>
-            <h5 className='text-2xl font-medium'>0</h5>
-            <p className='text-sm'>Waiting for me</p>
-          </div>
-
-          <div className='w-full py-6 px-6 border border-daygray bg-lightgray'>
-            <h5 className='text-2xl font-medium'>0</h5>
-            <p className='text-sm'>Waiting for others</p>
-          </div>
-
-          <div className='w-full py-6 px-6 border border-daygray bg-lightgray'>
-            <h5 className='text-2xl font-medium'>0</h5>
-            <p className='text-sm'>Completed</p>
-          </div>
+          {workspaces.map((workspace) => {
+            return (
+              <div
+                className={`w-full py-6 px-6 ${
+                  workspace.name !== action.nav
+                    ? 'border border-daygray bg-lightgray'
+                    : 'border-t-2 border-t-daygray'
+                }`}
+                key={workspace.name}
+              >
+                <h5 className='text-2xl font-medium'>{workspace.number}</h5>
+                <p className='text-sm'>{workspace.name}</p>
+              </div>
+            );
+          })}
         </div>
-        <div className='flex flex-col gap-y-2 items-center justify-center h-[59vh]'>
+        <div className='flex flex-col gap-y-2 items-center justify-center w-max m-auto'>
           <p>There are currently no drafted documents.</p>
           <Button
             name='Create new document'
@@ -39,9 +53,9 @@ const Workspace = () => {
           />
         </div>
       </div>
-      <div className='mt-auto px-6 lg:flex lg:flex-col w-full xl:grid xl:grid-cols-2 2xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full'>
-        {CardItems.map((item) => {
-          return <Card key={item.title} {...item} />;
+      <div className='mt-0 px-6 lg:flex lg:flex-col xl:grid xl:grid-cols-2 2xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full'>
+        {CardItems.map((item, index) => {
+          return <Card key={index} {...item} />;
         })}
       </div>
     </div>

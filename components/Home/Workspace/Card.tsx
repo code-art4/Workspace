@@ -8,7 +8,7 @@ const Card = ({
   description: string;
 }) => {
   return (
-    <div className='bg-daygray flex items-start w-max px-4 pt-4 pb-7 rounded-xl w-[50%] xl:w-full'>
+    <div className='bg-daygray flex items-start w-max px-4 pt-4 pb-7 rounded-xl xl:w-full'>
       <Image src='/svgs/edit.svg' alt='Edit' width='20' height='20' />
       <div className='px-4 mr-auto'>
         <h4 className='font-medium'>{title}</h4>

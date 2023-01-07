@@ -4,7 +4,13 @@ import Items, { FooterItems } from './items';
 import NavItem from './NavItem';
 import FooterNav from './FooterNav';
 
-const Nav = () => {
+const Nav = ({
+  handleChangeAction,
+  action,
+}: {
+  handleChangeAction: (item: any) => void;
+  action: { link: string; nav: string };
+}) => {
   const [openItemsMore, setOpenItemsMore] = useState<boolean>();
 
   const handleOpenNav = (item: any) => {
@@ -39,9 +45,11 @@ const Nav = () => {
             <NavItem
               key={item.nav}
               {...item}
+              action={action}
               more={item.more}
               openNavFn={handleOpenNav}
               openItemsMore={openItemsMore}
+              handleChangeAction={handleChangeAction}
             />
           );
         })}
