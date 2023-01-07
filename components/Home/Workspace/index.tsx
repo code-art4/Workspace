@@ -23,9 +23,9 @@ const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
     },
   ];
   return (
-    <div className='w-full flex flex-col min-h-screen'>
+    <div className='flex flex-col min-h-screen  lg:w-[65%] xl:w-[75%] ml-auto'>
       <TopNav />
-      <div className='mx-6 mt-4 mb-6 border border-daygray rounded-lg h-[70vh] 2xl:h-[80vh] flex flex-col'>
+      <div className='mx-6 mt-4 mb-6 border border-daygray rounded-lg h-[71vh] flex flex-col'>
         <div className='flex items-center w-full'>
           {workspaces.map((workspace) => {
             return (
@@ -53,7 +53,7 @@ const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
           />
         </div>
       </div>
-      <div className='mt-0 px-6 lg:flex lg:flex-col xl:grid xl:grid-cols-2 2xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full'>
+      <div className='mt-0 px-6 lg:flex lg:flex-col xl:grid xl:grid-cols-2 2xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full mb-3'>
         {CardItems.map((item, index) => {
           return <Card key={index} {...item} />;
         })}

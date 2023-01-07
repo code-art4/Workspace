@@ -19,7 +19,7 @@ const Nav = ({
     }
   };
   return (
-    <div className='lg:w-[28rem] xl:w-[25rem] border-r border-r-daygray py-10 h-screen px-8 flex flex-col'>
+    <div className='lg:w-[35%] xl:w-[25%] border-r border-r-daygray py-10 h-screen px-8 flex flex-col fixed'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center'>
           <Image
