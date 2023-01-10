@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Button from '../../shared/Button';
 
-const TopNav = () => {
+const TopNav = ({ openNavFn }: { openNavFn: () => void }) => {
   return (
-    <div className='flex items-center py-4 px-10 border-b border-b-daygray'>
+    <div className='flex items-center justify-between lg:justify-start py-4 px-5 md:px-10 border-b border-b-daygray mt-2 md:mt-0'>
+      <div className='mr-4 md:mr-8 lg:hidden' onClick={openNavFn}>
+        <Image src='/svgs/menu.svg' alt='menu' width='15' height='15' />
+      </div>
       <div className='flex items-center mr-auto'>
-        <h3 className='mr-3 font-medium text-lg'>My Workspace</h3>
+        <h3 className='mr-3 font-medium md:text-lg'>My Workspace</h3>
         <Image
           src='/svgs/chevron-down.svg'
           alt='chevron-down'
@@ -14,7 +17,7 @@ const TopNav = () => {
         />
       </div>
 
-      <div className='flex items-center gap-x-3'>
+      <div className='lg:flex items-center gap-x-3 hidden'>
         <Button
           name='Invite new user'
           textClassName='!text-balablue'

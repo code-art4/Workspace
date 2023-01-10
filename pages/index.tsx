@@ -4,6 +4,7 @@ import { Nav, Workspace } from '../components/Home';
 
 export default function Home() {
   const [action, setAction] = useState({ link: '/', nav: 'Drafts' });
+  const [openNav, setOpenNav] = useState(false);
   return (
     <>
       <Head>
@@ -11,8 +12,16 @@ export default function Home() {
       </Head>
       <main className='mx-auto'>
         <div className='flex'>
-          <Nav handleChangeAction={(each) => setAction(each)} action={action} />
-          <Workspace action={action} />
+          <Nav
+            handleChangeAction={(each) => setAction(each)}
+            action={action}
+            openNav={openNav}
+            closeNavFn={() => setOpenNav(false)}
+          />
+          <Workspace
+            action={action}
+            openNavFn={() => setOpenNav(true)}            
+          />
         </div>
       </main>
     </>

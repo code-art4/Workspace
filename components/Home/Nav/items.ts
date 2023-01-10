@@ -36,11 +36,12 @@ const Items = [{
 export const FooterItems = [
     {
         nav: "Settings",
-        svg: "/svgs/settings.svg"
+        svg: "/svgs/settings.svg",
     },
     {
         nav: "Help and support",
-        svg: "/svgs/help-square.svg"
+        svg: "/svgs/help-square.svg",
     }]
+
 
 export default Items

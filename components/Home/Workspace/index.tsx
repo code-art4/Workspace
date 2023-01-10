@@ -3,7 +3,13 @@ import CardItems from './CardItems';
 import TopNav from './TopNav';
 import Button from '../../shared/Button';
 
-const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
+const Workspace = ({
+  action,
+  openNavFn,
+}: {
+  action: { nav: string; link: string };
+  openNavFn: () => void;
+}) => {
   const workspaces = [
     {
       number: 0,
@@ -23,10 +29,10 @@ const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
     },
   ];
   return (
-    <div className='flex flex-col min-h-screen lg:w-[65%] xl:w-[77%] 2xl:w-[80%] ml-auto'>
-      <TopNav />
-      <div className='mx-6 mt-4 mb-6 border border-daygray rounded-lg h-[71vh] flex flex-col'>
-        <div className='flex items-center w-full'>
+    <div className='flex flex-col min-h-screen w-full lg:w-[72%] xl:w-[77%] 2xl:w-[80%] ml-auto'>
+      <TopNav openNavFn={openNavFn} />
+      <div className='mx-6 mt-4 mb-6 border border-daygray rounded-lg lg:h-[71vh] flex flex-col'>
+        <div className='flex flex-col lg:flex-row items-center w-full'>
           {workspaces.map((workspace) => {
             return (
               <div
@@ -43,8 +49,10 @@ const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
             );
           })}
         </div>
-        <div className='flex flex-col gap-y-2 items-center justify-center w-max m-auto'>
-          <p>There are currently no drafted documents.</p>
+        <div className='flex flex-col gap-y-2 items-center justify-center w-max lg:m-auto my-8 mx-auto'>
+          <p className='w-[15rem] md:w-max text-center lg:text-start mb-2 lg:mb-0'>
+            There are currently no drafted documents.
+          </p>
           <Button
             name='Create new document'
             leftIcon='/svgs/plus.svg'
@@ -53,7 +61,7 @@ const Workspace = ({ action }: { action: { nav: string; link: string } }) => {
           />
         </div>
       </div>
-      <div className='mt-0 px-6 lg:grid lg:grid-cols-2 xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full mb-3'>
+      <div className='mt-0 px-6 grid md:grid-cols-2 xl:grid-cols-3 xl:items-center gap-x-3 gap-y-3 w-full mb-3'>
         {CardItems.map((item, index) => {
           return <Card key={index} {...item} />;
         })}
