@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Items, { FooterItems } from './items';
 import NavItem from './NavItem';
 import FooterNav from './FooterNav';
+import Button from '../../shared/Button';
 
 const Nav = ({
   handleChangeAction,
@@ -37,16 +38,7 @@ const Nav = ({
             : 'translate-x-[-120%] fixed lg:translate-x-0'
         }
       lg:w-[28%] xl:w-[23%] 2xl:w-[20%] border-r border-r-daygray py-10 h-screen px-8 flex flex-col lg:flex lg:flex-col lg:fixed ease-in duration-300 transition-all`}
-      >
-        {/* <div className='ml-auto mb-3 lg:hidden' onClick={closeNavFn}>
-          <Image
-            src='/svgs/cancel.svg'
-            alt='Dwight'
-            width='11'
-            height='11'
-            className='object-cover'
-          />
-        </div> */}
+      >       
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
             <Image
@@ -67,7 +59,7 @@ const Nav = ({
           />
         </div>
 
-        <ul className='px-4 mt-12 flex flex-col gap-y-7 xl:gap-y-9 mb-5'>
+        <ul className='px-4 mt-12 flex flex-col gap-y-7 xl:gap-y-9'>
           {Items.map((item) => {
             return (
               <NavItem
@@ -82,6 +74,28 @@ const Nav = ({
             );
           })}
         </ul>
+
+        <div className='lg:hidden px-4 mt-7 flex flex-col gap-y-3 mb-5'>
+          <Button
+            name='Invite new user'
+            textClassName='!text-balablue'
+            className='bg-white shadow'
+            leftIcon='/svgs/plus-white.svg'
+            leftIconWidth='20'
+            leftIconHeight='20'
+          />
+
+          <Button
+            name='New'
+            leftIcon='/svgs/plus.svg'
+            leftIconWidth='20'
+            leftIconHeight='20'
+            className='mr-auto'
+            rightIcon='/svgs/chevron-down-white.svg'
+            rightIconWidth='20'
+            rightIconHeight='20'
+          />
+        </div>
 
         <ul className='mt-auto flex flex-col gap-y-6 px-2'>
           {FooterItems.map((footerItem) => {

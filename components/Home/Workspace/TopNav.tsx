@@ -4,7 +4,7 @@ import Button from '../../shared/Button';
 const TopNav = ({ openNavFn }: { openNavFn: () => void }) => {
   return (
     <div className='flex items-center justify-between lg:justify-start py-4 px-5 md:px-10 border-b border-b-daygray mt-2 md:mt-0'>
-      <div className='mr-4 md:mr-8 lg:hidden' onClick={openNavFn}>
+      <div className='mr-4 sm:mr-6 md:mr-8 lg:hidden' onClick={openNavFn}>
         <Image src='/svgs/menu.svg' alt='menu' width='15' height='15' />
       </div>
       <div className='flex items-center mr-auto'>
@@ -15,6 +15,12 @@ const TopNav = ({ openNavFn }: { openNavFn: () => void }) => {
           width='15'
           height='15'
         />
+      </div>
+
+      <div className='flex items-center gap-x-4 sm:gap-x-6 ml-auto lg:hidden'>
+        <Image src='/svgs/search.svg' alt='search' width='18' height='18' />
+        <Image src='/svgs/bell.svg' alt='notification' width='18' height='18' />
+        <Image src='/svgs/help-circle.svg' alt='help' width='18' height='18' />
       </div>
 
       <div className='lg:flex items-center gap-x-3 hidden'>
