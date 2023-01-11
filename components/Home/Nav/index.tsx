@@ -26,7 +26,7 @@ const Nav = ({
     <>
       {openNav ? (
         <div
-          className='bg-black/70 w-screen h-screen absolute z-[7]'
+          className='bg-black/70 w-screen h-screen z-[7] fixed'
           onClick={closeNavFn}
         ></div>
       ) : null}
@@ -38,7 +38,7 @@ const Nav = ({
         }
       lg:w-[28%] xl:w-[23%] 2xl:w-[20%] border-r border-r-daygray py-10 h-screen px-8 flex flex-col lg:flex lg:flex-col lg:fixed ease-in duration-300 transition-all`}
       >
-        <div className='ml-auto mb-3 lg:hidden' onClick={closeNavFn}>
+        {/* <div className='ml-auto mb-3 lg:hidden' onClick={closeNavFn}>
           <Image
             src='/svgs/cancel.svg'
             alt='Dwight'
@@ -46,7 +46,7 @@ const Nav = ({
             height='11'
             className='object-cover'
           />
-        </div>
+        </div> */}
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
             <Image
