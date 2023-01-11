@@ -33,8 +33,8 @@ const Nav = ({
       <div
         className={`${
           openNav
-            ? 'absolute bg-white z-[10] lg:relative'
-            : 'translate-x-[-120%] absolute lg:translate-x-0'
+            ? 'fixed bg-white z-[10] lg:relative'
+            : 'translate-x-[-120%] fixed lg:translate-x-0'
         }
       lg:w-[28%] xl:w-[23%] 2xl:w-[20%] border-r border-r-daygray py-10 h-screen px-8 flex flex-col lg:flex lg:flex-col lg:fixed ease-in duration-300 transition-all`}
       >
